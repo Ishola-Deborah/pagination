@@ -1,18 +1,12 @@
-// import React from "react";
-// import img from "../src/assets/myImg.png";
+import React from "react";
 
-// const About = () => {
-//   return (
-//     <div>
-//       <div className="about">
-//         <h1>About Me</h1>
 
-//         <div className="about_img">
-//           <img src={ img } alt="" />
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
+const About = () => {
+  return (
+    <div>
+     About
+    </div>
+  );
+};
 
-// export default About;
+export default About;
