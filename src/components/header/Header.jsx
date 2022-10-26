@@ -22,7 +22,7 @@ const Header = () => {
     <header>
       <span className="brand">
         <Link className="logo" to={"/users"}>
-          webPhere
+          debby
         </Link>
       </span>
       <nav className={showMenu ? "navActive" : "nav"}>
