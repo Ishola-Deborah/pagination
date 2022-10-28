@@ -18,26 +18,38 @@ const Header = () => {
     setShowMenu(!showMenu);
   };
 
+  const HideMenu = () => {
+    setShowMenu(false);
+  };
+
   return (
     <header>
       <span className="brand">
         <Link className="logo" to={"/users"}>
-          debby
+          dewPhere
         </Link>
       </span>
       <nav className={showMenu ? "navActive" : "nav"}>
         <ul className="navBar">
           <li>
-            <Link to={"/users"}>Home</Link>
+            <Link to={"/users"} onClick={HideMenu}>
+              Home
+            </Link>
           </li>
           <li>
-            <Link to={"/about"}>About</Link>
+            <Link to={"/about"} onClick={HideMenu}>
+              About
+            </Link>
           </li>
           <li>
-            <Link to={"/users"}>Users</Link>
+            <Link to={"/users"} onClick={HideMenu}>
+              Users
+            </Link>
           </li>
           <li>
-            <Link to={"/contact"}>Contact</Link>
+            <Link to={"/contact"} onClick={HideMenu}>
+              Contact
+            </Link>
           </li>
         </ul>
       </nav>
