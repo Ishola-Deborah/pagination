@@ -1,29 +1,43 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Users from "./pages/users/Users";
-import Contact from "./pages/contactPage/Contact";
-import About from "./pages/aboutPage/About";
-import ErrorPage from "./pages/errorPage/ErrorPage";
+
+const Users = lazy(() => import("./pages/users/Users"));
+const Contact = lazy(() => import("./pages/contactPage/Contact"));
+const About = lazy(() => import("./pages/aboutPage/About"));
+const ErrorPage = lazy(() => import("./pages/errorPage/ErrorPage"));
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
     errorElement: <ErrorPage />,
+
     children: [
       {
         path: "/about",
-        element: <About />,
+        element: (
+          <Suspense fallback={<span>About Loading</span>}>
+            <About />
+          </Suspense>
+        ),
       },
       {
         path: "/contact",
-        element: <Contact />,
+        element: (
+          <Suspense fallback={<span>Contact Loading</span>}>
+            <Contact />
+          </Suspense>
+        ),
       },
       {
         path: "/users",
-        element: <Users />,
+        element: (
+          <Suspense fallback={<span>Users Loading</span>}>
+            <Users />
+          </Suspense>
+        ),
       },
     ],
   },
