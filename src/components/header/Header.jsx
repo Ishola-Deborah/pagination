@@ -26,7 +26,7 @@ const Header = () => {
     <header>
       <span className="brand">
         <Link className="logo" to={"/users"}>
-          dewPhere
+          Debby
         </Link>
       </span>
       <nav className={showMenu ? "navActive" : "nav"}>
