@@ -51,24 +51,28 @@ const PaginateUsers = ({ users, pageLimit, noOfUsersToDisplay }) => {
           })}
         </div>
       }
-      <div className="pageNoBtn">
-        <div className="bottomPageNo">Page {pageNo}</div>
-        <div className="btns">
-          <button onClick={getPrevPage} className="prevBtn">
-            prev
-          </button>
-          {getPaginatedUsersPageNo().map((page, index) => {
-            return (
-              <button key={index} onClick={changePageNo}>
-                {page}
-              </button>
-            );
-          })}
-          <button onClick={getNextPage} className="nextBtn">
-            next
-          </button>
+      {users.length > 0 ? (
+        <div className="pageNoBtn">
+          <div className="bottomPageNo">Page {pageNo}</div>
+          <div className="btns">
+            <button onClick={getPrevPage} className="prevBtn">
+              prev
+            </button>
+            {getPaginatedUsersPageNo().map((page, index) => {
+              return (
+                <button key={index} onClick={changePageNo}>
+                  {page}
+                </button>
+              );
+            })}
+            <button onClick={getNextPage} className="nextBtn">
+              next
+            </button>
+          </div>
         </div>
-      </div>
+      ) : (
+        <div>Loading....</div>
+      )}
     </>
   );
 };
